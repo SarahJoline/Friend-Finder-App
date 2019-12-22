@@ -10,26 +10,24 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>Survey</title>
   </head>
   <body>
     <div class="card">
       <div class="card-body col-10 offset-1">
-        <h5 class="card-title">Survey Questions</h5>
+        <h1 class="card-title">Survey Questions</h1>
         <form>
           <div class="form-group">
-            <h5 class="card-title">About You</h5>
+            <h3 class="card-title">About You</h3>
             <label>Name (Required)</label>
-            <input id="nameInput" 
-              class="form-control"
-            />
+            <input type="text" id="nameInput" 
+              class="form-control" required/>
           </div>
           <div class="form-group">
             <label>Link to Photo Image (Required)</label>
-            <input
+            <input type="text"
               id="photoInput"
-              class="form-control"
-            />
+              class="form-control" required/>
           </div>
           <div class="question-div mt-3">
             <h5 class="question-card">Question 1</h5>
@@ -59,7 +57,7 @@
             <h5 class="question-card">Question 3</h5>
             <p>You find it easy to stay relaxed and focused even when there is some pressure.
             </p>
-            <select id="question3" class="form-control">
+            <select id="question3" class="form-control col-2">
                 <option>1 (strongly disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -71,7 +69,7 @@
             <h5 class="question-card">Question 4</h5>
             <p>You rarely do something just out of sheer curiosity.
             </p>
-            <select id="question4" class="form-control">
+            <select id="question4" class="form-control col-2">
                 <option>1 (strongly disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -83,7 +81,7 @@
             <h5 class="question-card">Question 5</h5>
             <p>People can rarely upset you.
             </p>
-            <select id="question5" class="form-control">
+            <select id="question5" class="form-control col-2">
                 <option>1 (strongly disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -95,7 +93,7 @@
             <h5 class="question-card">Question 6</h5>
             <p>It is often difficult for you to relate to other people’s feelings.
             </p>
-            <select id="question6" class="form-control">
+            <select id="question6" class="form-control col-2">
                 <option>1 (strongly disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -107,7 +105,7 @@
             <h5 class="question-card">Question 7</h5>
             <p>In a discussion, truth should be more important than people’s sensitivities.
             </p>
-            <select id="question7" class="form-control">
+            <select id="question7" class="form-control col-2">
                 <option>1 (strongly disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -118,7 +116,7 @@
           <div class="question-div mt-3">
             <h5 class="question-card">Question 8</h5>
             <p>You rarely get carried away by fantasies and ideas.</p>
-            <select id="question8" class="form-control">
+            <select id="question8" class="form-control col-2">
                 <option>1 (strongly disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -129,7 +127,7 @@
           <div class="question-div mt-3">
             <h5 class="question-card">Question 9</h5>
             <p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
-            <select id="question9" class="form-control">
+            <select id="question9" class="form-control col-2">
               <option>1 (strongly disagree)</option>
               <option>2</option>
               <option>3</option>
@@ -140,7 +138,7 @@
           <div class="question-div mt-3">
             <h5 class="question-card">Question 10</h5>
             <p>You feel more energetic after spending time with a group of people.</p>
-            <select id="question10" class="form-control">
+            <select id="question10" class="form-control col-2">
                 <option>1 (strongly disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -148,12 +146,14 @@
                 <option>5 (strongly agree)</option>
             </select>
           </div>
+          
         </div>
-          <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+        <div id="myAlert"></div>
+        <button id="submitBtn" type="submit" class="btn btn-primary col-10 offset-1">Submit</button>
         </form>
       </div>
     </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -190,12 +190,11 @@
       data: newMatch
     }).then(res => {
       console.log(res)
-      $("#submitBtn").on("click", e => {
-      $("#matchInfo").text(newMatch);
-    })
+      });
+     });
     });
-  });
-});
+
+
 
 
 

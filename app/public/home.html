@@ -10,27 +10,35 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+    />
 
-    <title>Document</title>
+    <title>Friend Finder</title>
   </head>
   <body>
-    <div class="card col-10 offset-1">
-      <div class="card-header">
-        <h1>Friend Finder</h1>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">
-          Answer a few basic questions.
-          <br />
-          Then find the friend with the greatest compatibility!
-        </h5>
-        <a href="./survey.html" class="btn btn-primary">Go to Survey</a>
-      </div>
-      <div class="links">
+    <div class="jumbotron col-10 offset-1 mt-2">
+      <h1 class="display-3">
+        <i class="fa fa-facebook-square"></i>Friend Finder
+      </h1>
+      <hr class="my-4" />
+      <h5 class="display-4">
+        Answer a few basic questions.
+        <br />
+        Then find the friend with the greatest compatibility!
+      </h5>
+      <a class="btn btn-primary btn-lg mt-4" href="./survey.html" role="button"
+        >Go to Survey</a
+      >
+      <div class="links" col-2 mt-3>
         <a href="http://localhost:3000/api/friends" class="card-link"
           >API Friends List</a
-        >|
-        <a href="#" class="card-link">GitHub Repo</a>
+        ><a
+          href="https://github.com/SarahJoline/Friend-Finder-App"
+          class="card-link"
+          >GitHub Repo</a
+        >
       </div>
     </div>
 
