@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-body col-10 offset-1">
+        <h5 class="card-title">Survey Questions</h5>
+        <form>
+          <div class="form-group">
+            <h5 class="card-title">About You</h5>
+            <label>Name (Required)</label>
+            <input id="nameInput" 
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label>Link to Photo Image (Required)</label>
+            <input
+              id="photoInput"
+              class="form-control"
+            />
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 1</h5>
+            <p>Your mind is always buzzing with unexplored ideas and plans.
+            </p>
+            <select id="question1" class="form-control col-2">
+                <option>1 (strongly disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (strongly agree)</option>
+            </select>
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 2</h5>
+            <p>Generally speaking, you rely more on your experience than your imagination.
+            </p>
+            <select id="question2" class="form-control col-2">
+                <option>1 (strongly disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (strongly agree)</option>
+            </select>
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 3</h5>
+            <p>You find it easy to stay relaxed and focused even when there is some pressure.
+            </p>
+            <select id="question3" class="form-control">
+                <option>1 (strongly disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (strongly agree)</option>
+            </select>
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 4</h5>
+            <p>You rarely do something just out of sheer curiosity.
+            </p>
+            <select id="question4" class="form-control">
+                <option>1 (strongly disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (strongly agree)</option>
+            </select>
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 5</h5>
+            <p>People can rarely upset you.
+            </p>
+            <select id="question5" class="form-control">
+                <option>1 (strongly disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (strongly agree)</option>
+            </select>
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 6</h5>
+            <p>It is often difficult for you to relate to other people’s feelings.
+            </p>
+            <select id="question6" class="form-control">
+                <option>1 (strongly disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (strongly agree)</option>
+            </select>
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 7</h5>
+            <p>In a discussion, truth should be more important than people’s sensitivities.
+            </p>
+            <select id="question7" class="form-control">
+                <option>1 (strongly disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (strongly agree)</option>
+            </select>
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 8</h5>
+            <p>You rarely get carried away by fantasies and ideas.</p>
+            <select id="question8" class="form-control">
+                <option>1 (strongly disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (strongly agree)</option>
+            </select>
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 9</h5>
+            <p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
+            <select id="question9" class="form-control">
+              <option>1 (strongly disagree)</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5 (strongly agree)</option>
+            </select>
+          </div>
+          <div class="question-div mt-3">
+            <h5 class="question-card">Question 10</h5>
+            <p>You feel more energetic after spending time with a group of people.</p>
+            <select id="question10" class="form-control">
+                <option>1 (strongly disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (strongly agree)</option>
+            </select>
+          </div>
+        </div>
+          <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+    $(document).ready(() => {
+  console.log("Hello");
+  $("#submitBtn").on("click", e => {
+    e.preventDefault();
+
+    const newMatch = {
+      name: $("#nameInput").val(),
+      photo: $("#photoInput").val(),
+      answers: [
+        parseInt($("#question1").val()),
+        parseInt($("#question2").val()),
+        parseInt($("#question3").val()),
+        parseInt($("#question4").val()),
+        parseInt($("#question5").val()),
+        parseInt($("#question6").val()),
+        parseInt($("#question7").val()),
+        parseInt($("#question8").val()),
+        parseInt($("#question9").val()),
+        parseInt($("#question10").val())
+      ]
+    };
+
+    console.log(newMatch);
+
+    $.ajax({
+      type: "POST",
+      url: "/api/friends",
+      data: newMatch
+    }).then(res => {
+      console.log(res)
+      $("#submitBtn").on("click", e => {
+      $("#matchInfo").text(newMatch);
+    })
+    });
+  });
+});
+
+
+
+</script>
+  </body>
+</html>
