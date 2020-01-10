@@ -35,7 +35,6 @@ let matches = [
 ];
 
 router.get("/friends", (req, res) => {
-  console.log("checking");
   res.send(matches);
 });
 
@@ -51,11 +50,8 @@ router.post("/friends", (req, res) => {
 
   for (var i in matches) {
     matchDifference = 0;
-    console.log(matches[i].answers);
     for (var j in matches[i].answers) {
-      console.log(matches[i].answers[j]);
       matchDifference += Math.abs(matches[i].answers[j] - userAnswers[j]);
-      console.log(matchDifference);
     }
 
     if (matchDifference < difference) {
