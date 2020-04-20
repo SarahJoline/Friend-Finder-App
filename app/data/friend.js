@@ -1,33 +1,14 @@
-$(document).ready(() => {
-  console.log("Hello");
-  $("#submitBtn").on("click", e => {
-    e.preventDefault();
+let matches = [
+  {
+    name: "Hannah",
+    photo: "https://picsum.photos/id/1025/4951/3301",
+    answers: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1],
+  },
+  {
+    name: "Jocelyn",
+    photo: "https://picsum.photos/id/1062/5092/3395",
+    answers: [3, 1, 2, 4, 4, 2, 5, 1, 3, 1],
+  },
+];
 
-    const newMatch = {
-      name: $("#nameInput").val(),
-      photo: $("#photoInput").val(),
-      answers: [
-        parseInt($("#question1").val()),
-        parseInt($("#question2").val()),
-        parseInt($("#question3").val()),
-        parseInt($("#question4").val()),
-        parseInt($("#question5").val()),
-        parseInt($("#question6").val()),
-        parseInt($("#question7").val()),
-        parseInt($("#question8").val()),
-        parseInt($("#question9").val()),
-        parseInt($("#question10").val())
-      ]
-    };
-
-    console.log(newMatch);
-
-    $.ajax({
-      type: "POST",
-      url: "/api/friends",
-      data: newMatch
-    }).then(res => {
-      console.log(res);
-    });
-  });
-});
+module.exports = matches;

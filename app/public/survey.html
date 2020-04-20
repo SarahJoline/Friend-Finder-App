@@ -148,11 +148,12 @@
           </div>
           
         </div>
-        <div id="myAlert"></div>
         <button id="submitBtn" type="submit" class="btn btn-primary col-10 offset-1">Submit</button>
         </form>
+        <div id="myAlert"></div>
       </div>
     </div>
+  
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -161,7 +162,6 @@
     ></script>
     <script>
     $(document).ready(() => {
-  console.log("Hello");
   $("#submitBtn").on("click", e => {
     e.preventDefault();
 
@@ -190,14 +190,20 @@
       data: newMatch
     }).then(res => {
       console.log(res)
-      });
-     });
-    });
+     
+     })
+    
 
-
-
-
-
+    })
+  })
 </script>
   </body>
 </html>
+
+
+    <!-- // $("#myAlert").append(`
+    //      <div class="match">
+    //         <h2>${res[0].name}</h2>
+    //         <img src=${res[0].photo} alt="image"></img>
+    //       </div>`)
+    //   }); -->

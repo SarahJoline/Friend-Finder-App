@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const friendsData = require("../data/friend.js");
 
 function Match(name, photo, answers) {
   this.name = name;
@@ -7,35 +8,8 @@ function Match(name, photo, answers) {
   this.answers = answers;
 }
 
-let matches = [
-  new Match("Fake Name", "https://picsum.photos/id/1025/4951/3301", [
-    5,
-    1,
-    4,
-    4,
-    5,
-    1,
-    2,
-    5,
-    4,
-    1
-  ]),
-  new Match("Another Fake Name", "https://picsum.photos/id/1062/5092/3395", [
-    3,
-    1,
-    2,
-    4,
-    4,
-    2,
-    5,
-    1,
-    3,
-    1
-  ])
-];
-
 router.get("/friends", (req, res) => {
-  res.send(matches);
+  res.send(friendsData);
 });
 
 router.post("/friends", (req, res) => {
@@ -48,19 +22,19 @@ router.post("/friends", (req, res) => {
   var difference = 50;
   var matchDifference;
 
-  for (var i in matches) {
+  for (var i in friendsData) {
     matchDifference = 0;
-    for (var j in matches[i].answers) {
-      matchDifference += Math.abs(matches[i].answers[j] - userAnswers[j]);
+    for (var j in friendsData[i].answers) {
+      matchDifference += Math.abs(friendsData[i].answers[j] - userAnswers[j]);
     }
 
     if (matchDifference < difference) {
       difference = matchDifference;
-      bestMatch = matches[i];
+      bestMatch = friendsData[i];
     }
   }
 
-  matches.push(new Match(userName, userPhoto, userAnswers));
+  friendsData.push(new Match(userName, userPhoto, userAnswers));
   res.send([bestMatch, difference]);
 });
 
