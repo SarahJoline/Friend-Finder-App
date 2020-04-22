@@ -180,56 +180,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-    $(document).ready(() => {
-  $("#submitBtn").on("click", e => {
-    e.preventDefault();
-
-    const newMatch = {
-      name: $("#nameInput").val(),
-      photo: $("#photoInput").val(),
-      answers: [
-        parseInt($("#question1").val()),
-        parseInt($("#question2").val()),
-        parseInt($("#question3").val()),
-        parseInt($("#question4").val()),
-        parseInt($("#question5").val()),
-        parseInt($("#question6").val()),
-        parseInt($("#question7").val()),
-        parseInt($("#question8").val()),
-        parseInt($("#question9").val()),
-        parseInt($("#question10").val())
-      ]
-    };
-
-    console.log(newMatch);
-
-    $.ajax({
-      type: "POST",
-      url: "/api/friends",
-      data: newMatch
-    }).then(res => {
-      console.log(res)
-      $("#matchName").text(res[0].name);
-      $("#matchPhoto").attr("src", res[0].photo);
-      $("#myAlert").modal("show");
-      })
-     
-     })
-    
-    
-    })
-
-  
-</script>
+    <script src="./app.js"></script>
   </body>
 </html>
-
-
-    <!-- // $("#myAlert").append(`
-    //      <div class="match">
-    //         <h2>${res[0].name}</h2>
-    //         <img src=${res[0].photo} alt="image"></img>
-    //       </div>`)
-    //   }); -->
-
