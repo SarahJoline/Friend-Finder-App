@@ -13,6 +13,7 @@
     <title>Survey</title>
   </head>
   <body>
+    
     <div class="card">
       <div class="card-body col-10 offset-1">
         <h1 class="card-title">Survey Questions</h1>
@@ -148,18 +149,37 @@
           </div>
           
         </div>
-        <button id="submitBtn" type="submit" class="btn btn-primary col-10 offset-1">Submit</button>
+        <br>
+        <button id="submitBtn" type="submit" class="btn btn-primary col-10 offset-1" data-toggle="modal" data-target="#staticBackdrop">Submit</button>
         </form>
-        <div id="myAlert"></div>
+
+        <div id="myAlert" class="modal" role="dialog">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h3 class="modal-title">Your Match</h1>
+                  </div>
+                  <div class="modal-body">
+                      <h2 id="matchName"></h2>
+                      <img id="matchPhoto" src="#"></img>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
       </div>
+
+
+      </div>
+
     </div>
   
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
     $(document).ready(() => {
   $("#submitBtn").on("click", e => {
@@ -190,12 +210,17 @@
       data: newMatch
     }).then(res => {
       console.log(res)
+      $("#matchName").text(res.name);
+      $("#matchPhoto").attr("src", res.photo);
+      $("#myAlert").modal("show");
+      })
      
      })
     
-
+    
     })
-  })
+
+  
 </script>
   </body>
 </html>
@@ -207,3 +232,4 @@
     //         <img src=${res[0].photo} alt="image"></img>
     //       </div>`)
     //   }); -->
+
