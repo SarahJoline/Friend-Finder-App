@@ -162,7 +162,7 @@
                   </div>
                   <div class="modal-body">
                       <h2 id="matchName"></h2>
-                      <img id="matchPhoto" src="#"></img>
+                      <img id="matchPhoto" src="#" height="200px" width="250"></img>
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -210,8 +210,8 @@
       data: newMatch
     }).then(res => {
       console.log(res)
-      $("#matchName").text(res.name);
-      $("#matchPhoto").attr("src", res.photo);
+      $("#matchName").text(res[0].name);
+      $("#matchPhoto").attr("src", res[0].photo);
       $("#myAlert").modal("show");
       })
      
